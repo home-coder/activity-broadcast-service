@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -12,15 +12,14 @@
     tools:context=".activity.MainActivity">
 
    <adtv.joysee.com.threeparts.ui.ButtonText
-       android:id="@+id/my_listview"
+       android:id="@+id/my_buttontext"
        android:layout_width="match_parent"
        android:layout_height="wrap_content">
    </adtv.joysee.com.threeparts.ui.ButtonText>
 
    <adtv.joysee.com.threeparts.ui.ShowList
        android:id="@+id/frame_listview"
-       android:layout_below="@+id/my_listview"
        android:layout_width="match_parent"
-       android:layout_height="match_parent">
+       android:layout_height="wrap_content">
    </adtv.joysee.com.threeparts.ui.ShowList>
-</RelativeLayout>
+</LinearLayout>

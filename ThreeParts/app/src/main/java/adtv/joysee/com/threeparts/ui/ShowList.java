@@ -23,17 +23,30 @@ public class ShowList extends FrameLayout{
     ListView listView;
     List<ChinaAddress> mlist;
 
+
     public ShowList(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.show_list, this);
         Log.e(TAG, "ShowList: ---1111--");
-
+        Log.i(TAG, "child count is " + getChildCount());
+        for(int i = 0; i < getChildCount(); i++)
+            Log.i(TAG, "child is " + getChildAt(i));
         listView = (ListView)findViewById(R.id.list_view);
+        Log.i(TAG, "list view is " + listView);
         mlist = new ArrayList<ChinaAddress>();
 
         initListView();
+
         AdreesAdapter adrAdapter = new AdreesAdapter(mlist, context);
+        Log.i(TAG, "set adapter ");
         listView.setAdapter(adrAdapter);
+    }
+
+    @Override
+    protected void onFinishInflate() {
+        super.onFinishInflate();
+        Log.e(TAG, "onFinishInflate: ---");
+
     }
 
     public void initListView() {
@@ -52,7 +65,7 @@ public class ShowList extends FrameLayout{
         twAdrr.setCity("台北");
         twAdrr.setStreet("阳明山");
 
-        mlist.add(gdAdrr);
+        mlist.add(hbAdrr);
         mlist.add(gdAdrr);
         mlist.add(twAdrr);
     }

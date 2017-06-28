@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import adtv.joysee.com.threeparts.ui.ButtonText;
 import adtv.joysee.com.threeparts.bean.Case;
@@ -26,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button = (Button) findViewById(R.id.bt_change);
         mController = new Controller();
-        buttonText = (ButtonText) findViewById(R.id.my_listview);
+        buttonText = (ButtonText) findViewById(R.id.my_buttontext);
         registerView();
 
         onMonitorClick();

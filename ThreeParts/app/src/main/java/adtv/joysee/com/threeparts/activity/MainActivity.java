@@ -1,20 +1,23 @@
-package adtv.joysee.com.threeparts;
+package adtv.joysee.com.threeparts.activity;
 
 import android.annotation.SuppressLint;
 import android.os.Message;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import adtv.joysee.com.threeparts.ui.ButtonText;
+import adtv.joysee.com.threeparts.bean.Case;
+import adtv.joysee.com.threeparts.controller.Controller;
+import adtv.joysee.com.threeparts.R;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
     public Button button;
     Controller mController;
-    MyListView myListView;
+    ButtonText buttonText;
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -23,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         button = (Button) findViewById(R.id.bt_change);
         mController = new Controller();
-        myListView = (MyListView) findViewById(R.id.my_listview);
+        buttonText = (ButtonText) findViewById(R.id.my_listview);
         registerView();
 
         onMonitorClick();
     }
 
     protected void registerView() {
-        mController.registerView(myListView);
+        mController.registerView(buttonText);
     }
 
     protected void onMonitorClick() {
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         break;
                 }
-                mController.dispatchMessage(myListView, message);
+                mController.dispatchMessage(buttonText, message);
             }
         });
     }

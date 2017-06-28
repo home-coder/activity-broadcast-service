@@ -16,13 +16,13 @@ public class Controller {
     private static final String TAG = "Controller";
     public ArrayList<LinearLayout> mViewList = new ArrayList<>();
 
-    protected void registerView(LinearLayout lview) {
+    public void registerView(LinearLayout lview) {
         if (mViewList == null || !mViewList.contains(lview)) {
             mViewList.add(lview);
         }
     }
 
-    protected void dispatchMessage(LinearLayout lview, Message msg) {
+    public void dispatchMessage(LinearLayout lview, Message msg) {
         switch (msg.what) {
             case Case.CHANGE_TXT:
                 Log.e(TAG, "dispatchMessage: ---" );

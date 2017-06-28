@@ -3,16 +3,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <TextView
         android:id="@+id/text_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:gravity="center"
         android:text="MVC test"
-        android:textSize="30sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:textSize="30sp" />
+
     <Button
         android:id="@+id/bt_change"
-        android:text="Change"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:text="Change" />
 </LinearLayout>

@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Log.e(TAG, "onCreate: -----" );
         button = (Button) findViewById(R.id.bt_change);
         mController = new Controller();
         myListView = (MyListView) findViewById(R.id.my_listview);
@@ -31,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void registerView() {
-        Log.e(TAG, "registerView: ===" );
         mController.registerView(myListView);
     }
 

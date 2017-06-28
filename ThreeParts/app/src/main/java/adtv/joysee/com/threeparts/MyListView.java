@@ -2,6 +2,7 @@ package adtv.joysee.com.threeparts;
 
 import android.content.Context;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,14 +13,18 @@ import android.widget.TextView;
 public class MyListView extends LinearLayout {
     private static final String TAG = "MyListView";
 
-    public TextView textView = (TextView)findViewById(R.id.text_view);
+    public TextView textView;
 
     public MyListView(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.mylinear_layout, this);
+        textView = (TextView)findViewById(R.id.text_view);
     }
 
     public void setText(String setString) {
+        if (textView == null) {
+            Log.e(TAG, "setText: ---" );
+        }
         textView.setText(setString);
     }
 }

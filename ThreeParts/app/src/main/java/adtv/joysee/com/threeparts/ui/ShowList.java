@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -18,11 +19,10 @@ import adtv.joysee.com.threeparts.ui.adapter.AdreesAdapter;
 /**
  * Created by jiangxiujie on 17-6-28.
  */
-public class ShowList extends FrameLayout{
+public class ShowList extends LinearLayout{
     private static final String TAG = "ShowList";
     ListView listView;
     List<ChinaAddress> mlist;
-
 
     public ShowList(Context context, AttributeSet attrs) {
         super(context, attrs);

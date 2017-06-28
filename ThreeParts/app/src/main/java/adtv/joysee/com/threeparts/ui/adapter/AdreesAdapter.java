@@ -49,14 +49,11 @@ public class AdreesAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View addrView = inflater.inflate(R.layout.show_list, null);
         ChinaAddress addr = (ChinaAddress) getItem(position);
-/*        Log.i(TAG, "child count is " + parent.getChildCount());
-        for(int i = 0; i < parent.getChildCount(); i++)
-            Log.i(TAG, "child is " + parent.getChildAt(i));*/
+
         TextView tv1 = (TextView) addrView.findViewById(R.id.textview1);
         TextView tv2 = (TextView) addrView.findViewById(R.id.textview2);
         TextView tv3 = (TextView) addrView.findViewById(R.id.textview3);
-        Log.e(TAG, "getView: ---");
-        Log.e(TAG, "getView: ============" + addr.getProvince() );
+
         tv1.setText(addr.getProvince());
         tv2.setText(addr.getCity());
         tv3.setText(addr.getStreet());

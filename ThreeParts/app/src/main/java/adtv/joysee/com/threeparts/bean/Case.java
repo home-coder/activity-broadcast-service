@@ -5,4 +5,5 @@ package adtv.joysee.com.threeparts.bean;
  */
 public class Case {
     public static final int CHANGE_TXT = 1;
+    public static final int CHANGE_STREET = 2;
 }

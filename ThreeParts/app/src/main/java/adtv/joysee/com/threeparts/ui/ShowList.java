@@ -23,6 +23,7 @@ public class ShowList extends LinearLayout{
     private static final String TAG = "ShowList";
     ListView listView;
     List<ChinaAddress> mlist;
+    AdreesAdapter adrAdapter;
 
     public ShowList(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -37,7 +38,7 @@ public class ShowList extends LinearLayout{
 
         initListView();
 
-        AdreesAdapter adrAdapter = new AdreesAdapter(mlist, context);
+        adrAdapter = new AdreesAdapter(mlist, context);
         Log.i(TAG, "set adapter ");
         listView.setAdapter(adrAdapter);
     }
@@ -68,5 +69,13 @@ public class ShowList extends LinearLayout{
         mlist.add(hbAdrr);
         mlist.add(gdAdrr);
         mlist.add(twAdrr);
+    }
+
+    public void changeStreet() {
+        mlist.get(0).setStreet("001");
+        mlist.get(1).setStreet("222");
+        mlist.get(2).setStreet("333");
+
+        adrAdapter.notifyDataSetChanged();
     }
 }

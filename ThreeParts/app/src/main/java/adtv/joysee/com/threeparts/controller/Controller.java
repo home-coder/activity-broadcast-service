@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import adtv.joysee.com.threeparts.bean.Case;
 import adtv.joysee.com.threeparts.ui.ButtonText;
+import adtv.joysee.com.threeparts.ui.ShowList;
 
 /**
  * Created by jiangxiujie on 17-6-28.
@@ -25,13 +26,17 @@ public class Controller {
     public void dispatchMessage(LinearLayout lview, Message msg) {
         switch (msg.what) {
             case Case.CHANGE_TXT:
-                Log.e(TAG, "dispatchMessage: ---" );
+                Log.e(TAG, "dispatchMessage: --- txt" );
                 ButtonText mlview = (ButtonText) lview;
                 if (mlview == null) {
                     Log.e(TAG, "dispatchMessage: null" );
                 }
                 mlview.setText("hello change");
                 break;
+            case Case.CHANGE_STREET:
+                Log.e(TAG, "dispatchMessage: -- street");
+                ShowList mshowList = (ShowList) lview;
+                mshowList.changeStreet();
             default:
                 break;
         }

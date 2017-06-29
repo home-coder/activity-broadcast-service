@@ -1,11 +1,11 @@
 package adtv.joysee.com.threeparts.ui;
 
-import android.app.Fragment;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
@@ -13,7 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import adtv.joysee.com.threeparts.R;
+import adtv.joysee.com.threeparts.activity.VideoActivity;
 import adtv.joysee.com.threeparts.bean.ChinaAddress;
+import adtv.joysee.com.threeparts.common.GetObjectUtils;
 import adtv.joysee.com.threeparts.ui.adapter.AdreesAdapter;
 
 /**
@@ -24,6 +26,7 @@ public class ShowList extends LinearLayout implements ViewInfa{
     ListView listView;
     List<ChinaAddress> mlist;
     AdreesAdapter adrAdapter;
+    Context mContex;
 
     public ShowList(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -41,6 +44,7 @@ public class ShowList extends LinearLayout implements ViewInfa{
         adrAdapter = new AdreesAdapter(mlist, context);
         Log.i(TAG, "set adapter ");
         listView.setAdapter(adrAdapter);
+        mContex = context;
     }
 
     @Override
@@ -77,5 +81,13 @@ public class ShowList extends LinearLayout implements ViewInfa{
         mlist.get(2).setStreet("333");
 
         adrAdapter.notifyDataSetChanged();
+    }
+
+    public void jumpVideoActivity(){
+        Log.e(TAG, "jumpVideoActivity: --in");
+        String activityName = GetObjectUtils.getRunningActivityName(mContex);
+        Log.e(TAG, "jumpVideoActivity: " + activityName );
+        Intent intent = new Intent(mContex, VideoActivity.class);
+        mContex.startActivity(intent);
     }
 }

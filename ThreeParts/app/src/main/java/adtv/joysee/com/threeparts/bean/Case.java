@@ -8,4 +8,6 @@ public class Case {
     public static final int CHANGE_STREET = 2;
 
     public static final int SEEK_PROCESS = 4;
+
+    public static final int JUMP_VIDEOACTIVITY = 8;
 }

@@ -2,6 +2,7 @@ package adtv.joysee.com.threeparts.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Button;
 
 import adtv.joysee.com.threeparts.R;
@@ -14,8 +15,9 @@ public class VideoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video);
+        Log.e(TAG, "onCreate: ---VideoActivity");
 
+        setContentView(R.layout.activity_video);
         button_play = (Button) findViewById(R.id.button_play);
         button_pause = (Button) findViewById(R.id.button_pause);
         button_stop = (Button) findViewById(R.id.button_stop);

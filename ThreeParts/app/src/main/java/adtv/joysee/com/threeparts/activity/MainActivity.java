@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     Controller mController;
     ButtonText buttonText;
     ShowList showList;
+    ListView listView;
+
 
     @SuppressLint("WrongViewCast")
     @Override
@@ -34,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         buttonText = (ButtonText) findViewById(R.id.my_buttontext);
         showList = (ShowList) findViewById(R.id.frame_listview);
         buttonStreet = (Button)findViewById(R.id.bt_chstreet);
+        listView = (ListView) findViewById(R.id.list_view);
 
         registerView();
 
@@ -53,13 +57,17 @@ public class MainActivity extends AppCompatActivity {
                 mController.dispatchMessage(showList, message);
             }
         });
-
-
-
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Message message = new Message();
+                message.what = Case.JUMP_VIDEOACTIVITY;
+                mController.dispatchMessage(showList, message);
+            }
+        });
     }
 
     protected void registerView() {
         mController.registerView(buttonText);
     }
-
 }

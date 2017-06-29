@@ -45,6 +45,10 @@ public class Controller {
                 VideoPlay videoPlay = (VideoPlay) lview;
                 videoPlay.setVideoInfo();
                 break;
+            case Case.JUMP_VIDEOACTIVITY:
+                Log.e(TAG, "dispatchMessage: -- jump activity");
+                ShowList mshowList2 = (ShowList) lview;
+                mshowList2.jumpVideoActivity();
             default:
                 break;
         }

@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         buttonView = (Button) findViewById(R.id.bt_view);
-        mController = new Controller();
+        mController = Controller.getInstance();
         buttonText = (ButtonText) findViewById(R.id.my_buttontext);
         showList = (ShowList) findViewById(R.id.frame_listview);
         buttonStreet = (Button)findViewById(R.id.bt_chstreet);
@@ -62,6 +62,9 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Message message = new Message();
                 message.what = Case.JUMP_VIDEOACTIVITY;
+                Bundle bundle = new Bundle();
+                bundle.putInt("item_position", position);
+                message.setData(bundle);
                 mController.dispatchMessage(showList, message);
             }
         });

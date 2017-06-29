@@ -48,7 +48,7 @@ public class VideoPlay extends RelativeLayout implements ViewInfa{
         });
     }
 
-    public void setVideoInfo() {
-        tv1.setText("暂停了");
+    public void setVideoInfo(String setString) {
+        tv1.setText(setString);
     }
 }

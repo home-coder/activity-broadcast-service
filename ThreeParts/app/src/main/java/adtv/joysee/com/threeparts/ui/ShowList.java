@@ -3,6 +3,7 @@ package adtv.joysee.com.threeparts.ui;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -83,11 +84,15 @@ public class ShowList extends LinearLayout implements ViewInfa{
         adrAdapter.notifyDataSetChanged();
     }
 
-    public void jumpVideoActivity(){
+    public void jumpVideoActivity(Bundle bundle){
         Log.e(TAG, "jumpVideoActivity: --in");
         String activityName = GetObjectUtils.getRunningActivityName(mContex);
         Log.e(TAG, "jumpVideoActivity: " + activityName );
         Intent intent = new Intent(mContex, VideoActivity.class);
+        int position = (int) bundle.get("item_position");
+        String intentStr = listView.getItemAtPosition(position).toString();
+        intent.putExtra("video_logo", intentStr);
+
         mContex.startActivity(intent);
     }
 }

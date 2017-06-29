@@ -19,6 +19,14 @@ public class Controller {
     private static final String TAG = "Controller";
     public ArrayList<LinearLayout> mViewList = new ArrayList<>();
 
+    private static Controller controller;
+    public static Controller getInstance() {
+        if (controller == null) {
+            return new Controller();
+        }
+        return controller;
+    }
+
     public void registerView(LinearLayout lview) {
         if (mViewList == null || !mViewList.contains(lview)) {
             mViewList.add(lview);
@@ -43,12 +51,17 @@ public class Controller {
             case Case.SEEK_PROCESS:
                 Log.e(TAG, "dispatchMessage: -- seekprocess");
                 VideoPlay videoPlay = (VideoPlay) lview;
-                videoPlay.setVideoInfo();
+                videoPlay.setVideoInfo("快进或者快退");
                 break;
             case Case.JUMP_VIDEOACTIVITY:
                 Log.e(TAG, "dispatchMessage: -- jump activity");
                 ShowList mshowList2 = (ShowList) lview;
-                mshowList2.jumpVideoActivity();
+                Log.e(TAG, "dispatchMessage: --getdata" + msg.getData());
+                mshowList2.jumpVideoActivity(msg.getData());
+                case Case.SET_VIDEOLOGO:
+                    Log.e(TAG, "dispatchMessage: -- videologo");
+                    VideoPlay videoPlay2 = (VideoPlay) lview;
+                    videoPlay2.setVideoInfo(msg.getData().toString());
             default:
                 break;
         }

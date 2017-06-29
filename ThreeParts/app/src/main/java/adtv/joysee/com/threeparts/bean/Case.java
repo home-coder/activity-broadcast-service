@@ -10,4 +10,5 @@ public class Case {
     public static final int SEEK_PROCESS = 4;
 
     public static final int JUMP_VIDEOACTIVITY = 8;
+    public static final int SET_VIDEOLOGO = 16;
 }

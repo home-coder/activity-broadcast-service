@@ -7,6 +7,7 @@
 下面实现controller的控制
 1.1 一个Activity，多个布局
 1.2 两个Activity，多个布局,实现点击湖北，广东，台湾会切换不同的视频源,并在第二个Activity活动中进行播放。
+1.3 如果有耗时操作，在UI的MVC中的View里面进行线程操作，比如从Controller--dispatchmessage, UI--processmessage--handler.send..--hander，然后回到主线程刷新UI
 
 2.Activity启动service，service通知controller，controller更新UI，比如将地点listview更新
 
@@ -22,7 +23,7 @@
 
 7.实现xml数据解析，并更新原始listview
 
-8.监听一个接口如何做
+8.监听一个接口如何做接口回调，网上有这方面的讲解，下面的代码是永新视博的一个使用案例
 public interface OnMonitorListener{
 	void onMonitor(int monitorType,Object message);
 }

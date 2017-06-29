@@ -5,6 +5,7 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 
 import adtv.joysee.com.threeparts.R;
@@ -35,14 +36,22 @@ public class VideoActivity extends AppCompatActivity {
         button_pause = (Button) findViewById(R.id.button_pause);
         button_stop = (Button) findViewById(R.id.button_stop);
         button_replay = (Button) findViewById(R.id.button_replay);
+
+        button_play.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.e(TAG, "onClick: --");
+            }
+        });
     }
+
 
     protected void initVideoPlay() {
         Intent intent = getIntent();
         String intentGet = intent.getStringExtra("video_logo");
         Log.e(TAG, "initVideoPlay: "  + intentGet);
         Message message = new Message();
-        message.what = Case.SET_VIDEOLOGO;
+        message.what = Case.VideoPlayCase.SET_VIDEOLOGO;
         Bundle bundle = new Bundle();
         bundle.putString("setvidologo", intentGet);
         message.setData(bundle);

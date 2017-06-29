@@ -20,7 +20,8 @@ public class Controller {
     public ArrayList<LinearLayout> mViewList = new ArrayList<>();
 
     private static Controller controller;
-
+    private ShowList mshowList;
+    private VideoPlay videoPlay;
     public static Controller getInstance() {
         if (controller == null) {
             return new Controller();
@@ -36,7 +37,7 @@ public class Controller {
 
     public void dispatchMessage(ViewInfa lview, Message msg) {
         switch (msg.what) {
-            case Case.CHANGE_TXT:
+            case Case.ButtonTextCase.CHANGE_TXT:
                 Log.e(TAG, "dispatchMessage: --- txt");
                 ButtonText mlview = (ButtonText) lview;
                 if (mlview == null) {
@@ -44,26 +45,26 @@ public class Controller {
                 }
                 mlview.setText("hello change");
                 break;
-            case Case.CHANGE_STREET:
+            case Case.ShowListCase.CHANGE_STREET:
                 Log.e(TAG, "dispatchMessage: -- street");
-                ShowList mshowList = (ShowList) lview;
+                mshowList = (ShowList) lview;
                 mshowList.changeStreet();
                 break;
-            case Case.SEEK_PROCESS:
+            case Case.VideoPlayCase.SEEK_PROCESS:
                 Log.e(TAG, "dispatchMessage: -- seekprocess");
-                VideoPlay videoPlay = (VideoPlay) lview;
+                videoPlay = (VideoPlay) lview;
                 videoPlay.setVideoInfo("快进或者快退");
                 break;
-            case Case.JUMP_VIDEOACTIVITY:
+            case Case.VideoPlayCase.JUMP_VIDEOACTIVITY:
+                mshowList = (ShowList) lview;
                 Log.e(TAG, "dispatchMessage: -- jump activity");
-                ShowList mshowList2 = (ShowList) lview;
                 Log.e(TAG, "dispatchMessage: --getdata" + msg.getData().get("item_position"));
-                mshowList2.jumpVideoActivity(msg.getData());
+                mshowList.jumpVideoActivity(msg.getData());
                 break;
-            case Case.SET_VIDEOLOGO:
+            case Case.VideoPlayCase.SET_VIDEOLOGO:
+                videoPlay = (VideoPlay) lview;
                 Log.e(TAG, "dispatchMessage: -- videologo" + msg.getData().get("setvidologo").toString());
-                VideoPlay videoPlay2 = (VideoPlay) lview;
-                videoPlay2.setVideoInfo(msg.getData().get("setvidologo").toString());
+                videoPlay.setVideoInfo(msg.getData().get("setvidologo").toString());
                 break;
             default:
                 break;

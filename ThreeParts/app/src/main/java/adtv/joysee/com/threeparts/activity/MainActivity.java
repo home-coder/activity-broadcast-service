@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             Message message = new Message();
             @Override
             public void onClick(View v) {
-                message.what = Case.CHANGE_TXT;
+                message.what = Case.ButtonTextCase.CHANGE_TXT;
                 mController.dispatchMessage(buttonText, message);
             }
         });
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             Message message = new Message();
             @Override
             public void onClick(View v) {
-                message.what = Case.CHANGE_STREET;
+                message.what = Case.ShowListCase.CHANGE_STREET;
                 mController.dispatchMessage(showList, message);
             }
         });
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Message message = new Message();
-                message.what = Case.JUMP_VIDEOACTIVITY;
+                message.what = Case.VideoPlayCase.JUMP_VIDEOACTIVITY;
                 Bundle bundle = new Bundle();
                 bundle.putInt("item_position", position);
                 message.setData(bundle);

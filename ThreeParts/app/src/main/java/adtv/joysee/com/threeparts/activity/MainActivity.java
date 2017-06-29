@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
@@ -13,6 +14,7 @@ import adtv.joysee.com.threeparts.bean.Case;
 import adtv.joysee.com.threeparts.controller.Controller;
 import adtv.joysee.com.threeparts.R;
 import adtv.joysee.com.threeparts.ui.ShowList;
+import adtv.joysee.com.threeparts.ui.ViewInfa;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";

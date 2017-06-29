@@ -12,7 +12,7 @@ import adtv.joysee.com.threeparts.R;
 /**
  * Created by jiangxiujie on 17-6-29.
  */
-public class VideoPlay extends RelativeLayout {
+public class VideoPlay extends RelativeLayout implements ViewInfa{
     private static final String TAG = "VideoPlay";
 
     TextView tv1;

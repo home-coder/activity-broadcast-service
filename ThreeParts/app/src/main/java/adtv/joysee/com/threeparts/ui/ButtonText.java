@@ -12,7 +12,7 @@ import adtv.joysee.com.threeparts.R;
 /**
  * Created by jiangxiujie on 17-6-28.
  */
-public class ButtonText extends LinearLayout {
+public class ButtonText extends LinearLayout implements ViewInfa{
     private static final String TAG = "MyListView";
 
     public TextView textView;

@@ -11,10 +11,10 @@
 1.4 优化Case， 一个是Case该不该放到Bean类里面，另外一个是Case中不同的变量要进行分类。
 1.5 Android中，我们在线程之间通信传递通常采用Android的消息机制，而这机制传递的正是Message。
     通常，我们使用Message.obtain()和Handler.obtainMessage()从Message Pool中获取Message，避免直接构造Message。
-1.6 优化dispatch消息分发机制
+1.6 优化消息的类型，做出最方便最规范统一的消息封装模型
+1.7 优化dispatch消息分发机制
 
 2.Activity启动service，service通知controller，controller更新UI，比如将地点listview更新
-
 
 
 3.通知的方式用getNotificationManager还是Broadcast，或者我说错了
@@ -34,3 +34,4 @@ public interface OnMonitorListener{
 
 9.使用RecycleView实现横向的view
 
+10.getContentResolver， 内容提供器的知识

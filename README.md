@@ -8,6 +8,7 @@
 1.1 一个Activity，多个布局
 1.2 两个Activity，多个布局,实现点击湖北，广东，台湾会切换不同的视频源,并在第二个Activity活动中进行播放。
 1.3 如果有耗时操作，在UI的MVC中的View里面进行线程操作，比如从Controller--dispatchmessage, UI--processmessage--handler.send..--hander，然后回到主线程刷新UI
+1.4 优化Case， 一个是Case该不该放到Bean类里面，另外一个是Case中不同的变量要进行分类。
 
 2.Activity启动service，service通知controller，controller更新UI，比如将地点listview更新
 

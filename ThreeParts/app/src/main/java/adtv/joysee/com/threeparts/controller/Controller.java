@@ -61,9 +61,10 @@ public class Controller {
                 mshowList2.jumpVideoActivity(msg.getData());
                 break;
             case Case.SET_VIDEOLOGO:
-                Log.e(TAG, "dispatchMessage: -- videologo");
+                Log.e(TAG, "dispatchMessage: -- videologo" + msg.getData().get("setvidologo").toString());
                 VideoPlay videoPlay2 = (VideoPlay) lview;
                 videoPlay2.setVideoInfo(msg.getData().get("setvidologo").toString());
+                break;
             default:
                 break;
         }

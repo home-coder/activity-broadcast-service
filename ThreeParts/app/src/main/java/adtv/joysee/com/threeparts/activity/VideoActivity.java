@@ -22,7 +22,7 @@ public class VideoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        Log.e(TAG, "onCreate: inininin");
         setContentView(R.layout.activity_video);
         Log.e(TAG, "onCreate: ---VideoActivity");
         mController = Controller.getInstance();
@@ -45,6 +45,9 @@ public class VideoActivity extends AppCompatActivity {
         message.what = Case.SET_VIDEOLOGO;
         Bundle bundle = new Bundle();
         bundle.putString("setvidologo", intentGet);
+        message.setData(bundle);
+        Log.e(TAG, "initVideoPlay: ----dispatch before");
+
         mController.dispatchMessage(videoPlay, message);
     }
 }

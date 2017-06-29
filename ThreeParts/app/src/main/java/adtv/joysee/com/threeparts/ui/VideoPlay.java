@@ -20,7 +20,7 @@ public class VideoPlay extends RelativeLayout implements ViewInfa{
 
     public VideoPlay(Context context, AttributeSet attrs) {
         super(context, attrs);
-        LayoutInflater.from(context).inflate(R.layout.activity_video, this);
+        LayoutInflater.from(context).inflate(R.layout.myvideo_layout, this);
         tv1 = (TextView) findViewById(R.id.textView);
 
         seekBar = (SeekBar) findViewById(R.id.seekBar);

@@ -15,9 +15,9 @@ public class VideoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e(TAG, "onCreate: ---VideoActivity");
 
         setContentView(R.layout.activity_video);
+        Log.e(TAG, "onCreate: ---VideoActivity");
         button_play = (Button) findViewById(R.id.button_play);
         button_pause = (Button) findViewById(R.id.button_pause);
         button_stop = (Button) findViewById(R.id.button_stop);

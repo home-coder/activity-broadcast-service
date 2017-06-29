@@ -6,8 +6,11 @@
 考虑如果是不同类型的布局，如何来通过controller去控制显示，当然就是使用接口了，让不同的布局对接一个接口
 下面实现controller的控制
 1.1 一个Activity，多个布局
-1.2 两个Activity，多个布局
+1.2 两个Activity，多个布局,实现点击湖北，广东，台湾会切换不同的视频源,并在第二个Activity活动中进行播放。
+
 2.Activity启动service，service通知controller，controller更新UI，比如将地点listview更新
+
+
 
 3.通知的方式用getNotificationManager还是Broadcast，或者我说错了
 
@@ -18,3 +21,11 @@
 6.手动写一个自定义的地点列表的xml文件
 
 7.实现xml数据解析，并更新原始listview
+
+8.监听一个接口如何做
+public interface OnMonitorListener{
+	void onMonitor(int monitorType,Object message);
+}
+
+9.使用RecycleView实现横向的view
+

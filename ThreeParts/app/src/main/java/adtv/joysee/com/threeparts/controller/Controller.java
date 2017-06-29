@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import adtv.joysee.com.threeparts.bean.Case;
 import adtv.joysee.com.threeparts.ui.ButtonText;
 import adtv.joysee.com.threeparts.ui.ShowList;
+import adtv.joysee.com.threeparts.ui.VideoPlay;
 
 /**
  * Created by jiangxiujie on 17-6-28.
@@ -37,6 +38,9 @@ public class Controller {
                 Log.e(TAG, "dispatchMessage: -- street");
                 ShowList mshowList = (ShowList) lview;
                 mshowList.changeStreet();
+                case Case.SEEK_PROCESS:
+                    Log.e(TAG, "dispatchMessage: -- seekprocess");
+                    VideoPlay videoPlay = (VideoPlay) lview;
             default:
                 break;
         }

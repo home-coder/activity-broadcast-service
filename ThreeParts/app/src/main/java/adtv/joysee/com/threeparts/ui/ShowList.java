@@ -19,7 +19,7 @@ import adtv.joysee.com.threeparts.ui.adapter.AdreesAdapter;
 /**
  * Created by jiangxiujie on 17-6-28.
  */
-public class ShowList extends LinearLayout{
+public class ShowList extends LinearLayout implements ViewInfa{
     private static final String TAG = "ShowList";
     ListView listView;
     List<ChinaAddress> mlist;

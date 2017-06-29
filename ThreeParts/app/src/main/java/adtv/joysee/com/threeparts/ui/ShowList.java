@@ -1,6 +1,5 @@
 package adtv.joysee.com.threeparts.ui;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -88,9 +87,12 @@ public class ShowList extends LinearLayout implements ViewInfa{
         Log.e(TAG, "jumpVideoActivity: --in");
         String activityName = GetObjectUtils.getRunningActivityName(mContex);
         Log.e(TAG, "jumpVideoActivity: " + activityName );
+
         Intent intent = new Intent(mContex, VideoActivity.class);
         int position = (int) bundle.get("item_position");
-        String intentStr = listView.getItemAtPosition(position).toString();
+        ChinaAddress chinaAddr = (ChinaAddress) adrAdapter.getItem(position);
+        String intentStr = chinaAddr.getProvince();
+        Log.e(TAG, "jumpVideoActivity: " + intentStr);
         intent.putExtra("video_logo", intentStr);
 
         mContex.startActivity(intent);

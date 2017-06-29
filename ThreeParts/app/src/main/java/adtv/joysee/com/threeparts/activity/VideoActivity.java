@@ -26,7 +26,9 @@ public class VideoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_video);
         Log.e(TAG, "onCreate: ---VideoActivity");
         mController = Controller.getInstance();
+        Log.e(TAG, "onCreate: --- getInstance ok");
         videoPlay = (VideoPlay) findViewById(R.id.my_videoview);
+        Log.e(TAG, "onCreate: --- find view ok");
         initVideoPlay();
 
         button_play = (Button) findViewById(R.id.button_play);
@@ -38,6 +40,7 @@ public class VideoActivity extends AppCompatActivity {
     protected void initVideoPlay() {
         Intent intent = getIntent();
         String intentGet = intent.getStringExtra("video_logo");
+        Log.e(TAG, "initVideoPlay: "  + intentGet);
         Message message = new Message();
         message.what = Case.SET_VIDEOLOGO;
         Bundle bundle = new Bundle();

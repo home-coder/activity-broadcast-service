@@ -20,6 +20,7 @@ public class Controller {
     public ArrayList<LinearLayout> mViewList = new ArrayList<>();
 
     private static Controller controller;
+
     public static Controller getInstance() {
         if (controller == null) {
             return new Controller();
@@ -56,12 +57,13 @@ public class Controller {
             case Case.JUMP_VIDEOACTIVITY:
                 Log.e(TAG, "dispatchMessage: -- jump activity");
                 ShowList mshowList2 = (ShowList) lview;
-                Log.e(TAG, "dispatchMessage: --getdata" + msg.getData());
+                Log.e(TAG, "dispatchMessage: --getdata" + msg.getData().get("item_position"));
                 mshowList2.jumpVideoActivity(msg.getData());
-                case Case.SET_VIDEOLOGO:
-                    Log.e(TAG, "dispatchMessage: -- videologo");
-                    VideoPlay videoPlay2 = (VideoPlay) lview;
-                    videoPlay2.setVideoInfo(msg.getData().toString());
+                break;
+            case Case.SET_VIDEOLOGO:
+                Log.e(TAG, "dispatchMessage: -- videologo");
+                VideoPlay videoPlay2 = (VideoPlay) lview;
+                videoPlay2.setVideoInfo(msg.getData().get("setvidologo").toString());
             default:
                 break;
         }

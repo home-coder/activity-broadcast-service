@@ -8,6 +8,12 @@ public class ChinaAddress {
     private String City;
     private String street;
 
+    public ChinaAddress(String Province, String City, String street) {
+        setProvince(Province);
+        setCity(City);
+        setStreet(street);
+    }
+
     public String getProvince() {
         return Province;
     }

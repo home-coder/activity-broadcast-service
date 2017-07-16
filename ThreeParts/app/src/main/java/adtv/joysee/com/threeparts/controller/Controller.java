@@ -24,7 +24,7 @@ public class Controller {
     private VideoPlay videoPlay;
     public static Controller getInstance() {
         if (controller == null) {
-            return new Controller();
+            controller =  new Controller();
         }
         return controller;
     }

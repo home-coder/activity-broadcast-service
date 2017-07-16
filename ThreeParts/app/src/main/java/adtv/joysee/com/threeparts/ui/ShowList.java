@@ -35,6 +35,9 @@ public class ShowList extends LinearLayout implements ViewInfa{
         Log.i(TAG, "child count is " + getChildCount());
         for(int i = 0; i < getChildCount(); i++)
             Log.i(TAG, "child is " + getChildAt(i));
+        /*
+        * LinearLayout继承了View，所以天生他就有findViewById方法
+        * */
         listView = (ListView)findViewById(R.id.list_view);
         Log.i(TAG, "list view is " + listView);
         mlist = new ArrayList<ChinaAddress>();
@@ -55,26 +58,19 @@ public class ShowList extends LinearLayout implements ViewInfa{
     }
 
     public void initListView() {
-        ChinaAddress hbAdrr = new ChinaAddress();
-        hbAdrr.setProvince("湖北");
-        hbAdrr.setCity("仙桃");
-        hbAdrr.setStreet("机场线");
-
-        ChinaAddress gdAdrr = new ChinaAddress();
-        gdAdrr.setProvince("广东");
-        gdAdrr.setCity("广州");
-        gdAdrr.setStreet("黑人区");
-
-        ChinaAddress twAdrr = new ChinaAddress();
-        twAdrr.setProvince("台湾");
-        twAdrr.setCity("台北");
-        twAdrr.setStreet("阳明山");
+        ChinaAddress hbAdrr = new ChinaAddress("湖北", "仙桃", "机场线");
+        ChinaAddress gdAdrr = new ChinaAddress("广东", "广州", "黑人区");
+        ChinaAddress twAdrr = new ChinaAddress("台湾", "台北", "阳明山");
 
         mlist.add(hbAdrr);
         mlist.add(gdAdrr);
         mlist.add(twAdrr);
     }
 
+    /*
+    * 数据操作使用list，adapter中操作使用getitem等
+    *
+    * */
     public void changeStreet() {
         mlist.get(0).setStreet("001");
         mlist.get(1).setStreet("222");

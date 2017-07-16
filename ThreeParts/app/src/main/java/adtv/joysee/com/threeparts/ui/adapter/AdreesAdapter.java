@@ -24,6 +24,11 @@ public class AdreesAdapter extends BaseAdapter {
     List<ChinaAddress>addrList = new ArrayList<>();
     private LayoutInflater inflater;
 
+    /*
+    * 如果是Activity，那么直接setContentView,然后就可以findViewById，因为Activity里面有findViewById方法
+    * 另外一个有findViewById方法的地方时View，但是
+    * 因为BaseAdapter并不继承任何findViewById方法，所以只能通过context构造出视图View，然后使用View中的findViewById方法
+    * */
     public AdreesAdapter(List<ChinaAddress>addresses, Context context) {
         this.addrList = addresses;
         this.inflater = LayoutInflater.from(context);

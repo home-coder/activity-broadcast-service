@@ -52,7 +52,7 @@ public class AdreesAdapter extends BaseAdapter {
     /*把布局加载为视图，在视图中找控件*/
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View addrView = inflater.inflate(R.layout.show_list, null);
+        View addrView = inflater.inflate(R.layout.listview_content, null);
         ChinaAddress addr = (ChinaAddress) getItem(position);
 
         TextView tv1 = (TextView) addrView.findViewById(R.id.textview1);

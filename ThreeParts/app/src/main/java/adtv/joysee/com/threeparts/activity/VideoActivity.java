@@ -45,7 +45,6 @@ public class VideoActivity extends AppCompatActivity {
         });
     }
 
-
     protected void initVideoPlay() {
         Intent intent = getIntent();
         String intentGet = intent.getStringExtra("video_logo");

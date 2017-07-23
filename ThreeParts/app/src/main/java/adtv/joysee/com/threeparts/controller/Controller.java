@@ -23,6 +23,9 @@ public class Controller {
         return controller;
     }
 
+/*
+* 将来作为统一给各个控件发送广播用，当然是模拟出来的广播，就是遍历发送信息的意思
+* */
     public void registerView(ViewInfa lview) {
         if (mViewList == null || !mViewList.contains(lview)) {
             mViewList.add(lview);

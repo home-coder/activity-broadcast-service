@@ -1,13 +1,7 @@
 package adtv.joysee.com.threeparts.controller;
 
 import android.os.Message;
-import android.util.Log;
-import android.widget.LinearLayout;
-
 import java.util.ArrayList;
-
-import adtv.joysee.com.threeparts.bean.Case;
-import adtv.joysee.com.threeparts.ui.ButtonText;
 import adtv.joysee.com.threeparts.ui.ShowList;
 import adtv.joysee.com.threeparts.ui.VideoPlay;
 import adtv.joysee.com.threeparts.ui.ViewInfa;
@@ -17,7 +11,7 @@ import adtv.joysee.com.threeparts.ui.ViewInfa;
  */
 public class Controller {
     private static final String TAG = "Controller";
-    public ArrayList<LinearLayout> mViewList = new ArrayList<>();
+    public ArrayList<ViewInfa> mViewList = new ArrayList<>();
 
     private static Controller controller;
     private ShowList mshowList;
@@ -29,17 +23,22 @@ public class Controller {
         return controller;
     }
 
-    public void registerView(LinearLayout lview) {
+    public void registerView(ViewInfa lview) {
         if (mViewList == null || !mViewList.contains(lview)) {
             mViewList.add(lview);
         }
     }
 /*
 * 通过各个自定义的空间来实现ViewInfo接口的process方法，
-* 然后此处交给不同的控件并调用他们的process方法就好了，封装性
+* 然后此处交给不同的控件并调用他们的processmessage方法就好了，封装性
 *
+* 向上转型的好处 向上转型的好处 向上转型的好处 向上转型的好处 向上转型的好处
 * */
     public void dispatchMessage(ViewInfa lview, Message msg) {
+            lview.processMessage(lview, msg);
+    }
+
+  /*  public void dispatchMessage(ViewInfa lview, Message msg) {
         switch (msg.what) {
             case Case.ButtonTextCase.CHANGE_TXT:
                 Log.e(TAG, "dispatchMessage: --- txt");
@@ -73,5 +72,5 @@ public class Controller {
             default:
                 break;
         }
-    }
+    }*/
 }

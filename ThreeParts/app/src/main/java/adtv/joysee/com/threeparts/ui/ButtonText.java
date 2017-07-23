@@ -9,13 +9,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import adtv.joysee.com.threeparts.R;
+import adtv.joysee.com.threeparts.bean.Case;
 import adtv.joysee.com.threeparts.common.GetObjectUtils;
 
 /**
  * Created by jiangxiujie on 17-6-28.
  */
 public class ButtonText extends LinearLayout implements ViewInfa{
-    private static final String TAG = "MyListView";
+    private static final String TAG = "ButtonText";
 
     public TextView textView;
 
@@ -38,5 +39,16 @@ public class ButtonText extends LinearLayout implements ViewInfa{
     public void processMessage(Object sender,Message msg) {
         String activityName = GetObjectUtils.getRunningActivityName(getContext());
         Log.e(TAG, "processMessage: " + activityName);
+
+        switch (msg.what) {
+            case Case.ButtonTextCase.CHANGE_TXT:
+                Log.e(TAG, "dispatchMessage: --- txt");
+                ButtonText mlview = (ButtonText) sender;
+                if (mlview == null) {
+                    Log.e(TAG, "dispatchMessage: null");
+                }
+                mlview.setText("hello change");
+                break;
+        }
     }
 }

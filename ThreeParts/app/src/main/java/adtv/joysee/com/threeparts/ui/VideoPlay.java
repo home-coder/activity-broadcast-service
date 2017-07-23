@@ -1,13 +1,16 @@
 package adtv.joysee.com.threeparts.ui;
 
 import android.content.Context;
+import android.os.Message;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
 import adtv.joysee.com.threeparts.R;
+import adtv.joysee.com.threeparts.common.GetObjectUtils;
 
 /**
  * Created by jiangxiujie on 17-6-29.
@@ -50,5 +53,10 @@ public class VideoPlay extends RelativeLayout implements ViewInfa{
 
     public void setVideoInfo(String setString) {
         tv1.setText(setString);
+    }
+
+    public void processMessage(Object sender,Message msg) {
+        String activityName = GetObjectUtils.getRunningActivityName(getContext());
+        Log.e(TAG, "processMessage: " + activityName);
     }
 }

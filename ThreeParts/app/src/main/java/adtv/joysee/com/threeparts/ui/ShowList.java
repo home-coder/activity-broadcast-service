@@ -3,6 +3,7 @@ package adtv.joysee.com.threeparts.ui;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Message;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -92,5 +93,10 @@ public class ShowList extends LinearLayout implements ViewInfa{
         intent.putExtra("video_logo", intentStr);
 
         mContex.startActivity(intent);
+    }
+
+    public void processMessage(Object sender,Message msg) {
+        String activityName = GetObjectUtils.getRunningActivityName(getContext());
+        Log.e(TAG, "processMessage: " + activityName);
     }
 }

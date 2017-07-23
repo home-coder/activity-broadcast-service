@@ -34,7 +34,11 @@ public class Controller {
             mViewList.add(lview);
         }
     }
-
+/*
+* 通过各个自定义的空间来实现ViewInfo接口的process方法，
+* 然后此处交给不同的控件并调用他们的process方法就好了，封装性
+*
+* */
     public void dispatchMessage(ViewInfa lview, Message msg) {
         switch (msg.what) {
             case Case.ButtonTextCase.CHANGE_TXT:

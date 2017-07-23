@@ -37,40 +37,4 @@ public class Controller {
     public void dispatchMessage(ViewInfa lview, Message msg) {
             lview.processMessage(lview, msg);
     }
-
-  /*  public void dispatchMessage(ViewInfa lview, Message msg) {
-        switch (msg.what) {
-            case Case.ButtonTextCase.CHANGE_TXT:
-                Log.e(TAG, "dispatchMessage: --- txt");
-                ButtonText mlview = (ButtonText) lview;
-                if (mlview == null) {
-                    Log.e(TAG, "dispatchMessage: null");
-                }
-                mlview.setText("hello change");
-                break;
-            case Case.ShowListCase.CHANGE_STREET:
-                Log.e(TAG, "dispatchMessage: -- street");
-                mshowList = (ShowList) lview;
-                mshowList.changeStreet();
-                break;
-            case Case.VideoPlayCase.SEEK_PROCESS:
-                Log.e(TAG, "dispatchMessage: -- seekprocess");
-                videoPlay = (VideoPlay) lview;
-                videoPlay.setVideoInfo("快进或者快退");
-                break;
-            case Case.VideoPlayCase.JUMP_VIDEOACTIVITY:
-                mshowList = (ShowList) lview;
-                Log.e(TAG, "dispatchMessage: -- jump activity");
-                Log.e(TAG, "dispatchMessage: --getdata" + msg.getData().get("item_position"));
-                mshowList.jumpVideoActivity(msg.getData());
-                break;
-            case Case.VideoPlayCase.SET_VIDEOLOGO:
-                videoPlay = (VideoPlay) lview;
-                Log.e(TAG, "dispatchMessage: -- videologo" + msg.getData().get("setvidologo").toString());
-                videoPlay.setVideoInfo(msg.getData().get("setvidologo").toString());
-                break;
-            default:
-                break;
-        }
-    }*/
 }

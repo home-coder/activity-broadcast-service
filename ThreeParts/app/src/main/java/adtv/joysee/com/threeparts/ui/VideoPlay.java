@@ -10,6 +10,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import adtv.joysee.com.threeparts.R;
+import adtv.joysee.com.threeparts.bean.Case;
 import adtv.joysee.com.threeparts.common.GetObjectUtils;
 
 /**
@@ -58,5 +59,19 @@ public class VideoPlay extends RelativeLayout implements ViewInfa{
     public void processMessage(Object sender,Message msg) {
         String activityName = GetObjectUtils.getRunningActivityName(getContext());
         Log.e(TAG, "processMessage: " + activityName);
+
+        switch (msg.what) {
+            case Case.VideoPlayCase.SEEK_PROCESS:
+                Log.e(TAG, "dispatchMessage: -- seekprocess");
+                setVideoInfo("快进或者快退");
+                break;
+
+            case Case.VideoPlayCase.SET_VIDEOLOGO:
+                Log.e(TAG, "dispatchMessage: -- videologo" + msg.getData().get("setvidologo").toString());
+                setVideoInfo(msg.getData().get("setvidologo").toString());
+                break;
+            default:
+                break;
+        }
     }
 }

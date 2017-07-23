@@ -15,6 +15,7 @@ import java.util.List;
 
 import adtv.joysee.com.threeparts.R;
 import adtv.joysee.com.threeparts.activity.VideoActivity;
+import adtv.joysee.com.threeparts.bean.Case;
 import adtv.joysee.com.threeparts.bean.ChinaAddress;
 import adtv.joysee.com.threeparts.common.GetObjectUtils;
 import adtv.joysee.com.threeparts.ui.adapter.AdreesAdapter;
@@ -98,5 +99,19 @@ public class ShowList extends LinearLayout implements ViewInfa{
     public void processMessage(Object sender,Message msg) {
         String activityName = GetObjectUtils.getRunningActivityName(getContext());
         Log.e(TAG, "processMessage: " + activityName);
+
+        switch (msg.what) {
+            case Case.ShowListCase.CHANGE_STREET:
+                Log.e(TAG, "dispatchMessage: -- street");
+                changeStreet();
+                break;
+            case Case.VideoPlayCase.JUMP_VIDEOACTIVITY:
+                Log.e(TAG, "dispatchMessage: -- jump activity");
+                Log.e(TAG, "dispatchMessage: --getdata" + msg.getData().get("item_position"));
+                jumpVideoActivity(msg.getData());
+                break;
+            default:
+                break;
+        }
     }
 }

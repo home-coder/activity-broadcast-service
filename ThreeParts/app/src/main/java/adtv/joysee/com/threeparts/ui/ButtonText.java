@@ -49,6 +49,8 @@ public class ButtonText extends LinearLayout implements ViewInfa{
                 }
                 mlview.setText("hello change");
                 break;
+            default:
+                break;
         }
     }
 }

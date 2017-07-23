@@ -49,7 +49,10 @@ public class AdreesAdapter extends BaseAdapter {
         return position;
     }
 
-    /*把布局加载为视图，在视图中找控件*/
+    /*把布局加载为视图，在视图中找控件
+    *
+    *一直给自己骗了，还误以为必须include，原来都是套路，但是要认真理解这个套路。 加载布局 ！
+    * */
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View addrView = inflater.inflate(R.layout.listview_content, null);

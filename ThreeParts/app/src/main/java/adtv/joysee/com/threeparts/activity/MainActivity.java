@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.e(TAG, "onCreate: ----开始调用自定义控件");
         setContentView(R.layout.activity_main);
         buttonView = (Button) findViewById(R.id.bt_view);
         mController = Controller.getInstance();

@@ -23,7 +23,7 @@ public class ButtonText extends LinearLayout implements ViewInfa{
     public ButtonText(Context context, AttributeSet attrs) {
         super(context, attrs);
         LayoutInflater.from(context).inflate(R.layout.mylinear_layout, this);
-        Log.i(TAG, "child count is1 " + getChildCount());
+        Log.e(TAG, "child count is1 " + getChildCount());
         for(int i = 0; i < getChildCount(); i++)
             Log.i(TAG, "child is1 " + getChildAt(i));
         textView = (TextView)findViewById(R.id.text_view);
